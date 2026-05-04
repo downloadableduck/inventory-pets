@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.jeff.invpets.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "AbstractContainerScreenMixin",
+    "InventoryMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
