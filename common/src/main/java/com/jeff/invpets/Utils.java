@@ -1,8 +1,6 @@
 package com.jeff.invpets;
 
-import net.minecraft.advancements.criterion.SheepPredicate;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +12,6 @@ import net.minecraft.world.entity.animal.bee.Bee;
 import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.camel.CamelHusk;
 import net.minecraft.world.entity.animal.chicken.Chicken;
-import net.minecraft.world.entity.animal.chicken.ChickenVariant;
 import net.minecraft.world.entity.animal.chicken.ChickenVariants;
 import net.minecraft.world.entity.animal.cow.Cow;
 import net.minecraft.world.entity.animal.dolphin.Dolphin;
@@ -53,12 +50,14 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import org.jetbrains.annotations.NotNull;
 
-import static com.jeff.invpets.ExampleMod.MOD_ID;
-import static net.minecraft.network.syncher.EntityDataSerializers.CHICKEN_VARIANT;
+import static com.jeff.invpets.InventoryPets.MOD_ID;
 
 public class Utils {
 
     public static ResourceKey<@NotNull Biome> biome;
+    public static int randomX;
+    public static boolean shouldTurnAround;
+    public static boolean isFacingLeft;
 
     public static Identifier getBackground() {
         int random = (int) (Math.random() * 7);
@@ -75,7 +74,7 @@ public class Utils {
                 return withInventoryPetsNamespac("textures/gui/inventory/desert.png");
             } case 3 -> {
                 biome = Biomes.OCEAN;
-                return withInventoryPetsNamespac("tetures/gui/inventory/sea.png");
+                return withInventoryPetsNamespac("textures/gui/inventory/sea.png");
             } case 4 -> {
                 biome = Biomes.CHERRY_GROVE;
                 return withInventoryPetsNamespac("textures/gui/inventory/cherry_grove.png");
@@ -97,11 +96,7 @@ public class Utils {
     public static LivingEntity getEntity(Level level) {
         int random = (int) (Math.random() * 15);
         if (biome.equals(Biomes.THE_END)) {
-            if (random <= 10) {
-                return new EnderMan(EntityType.ENDERMAN, level);
-            } else {
-                return new Endermite(EntityType.ENDERMITE, level);
-            }
+            return new EnderMan(EntityType.ENDERMAN, level);
         } else if (biome.equals(Biomes.FOREST)) {
             switch(random) {
                 case 0 -> {
@@ -251,6 +246,6 @@ public class Utils {
                 }
             }
         }
-        return null;
+        return new Zombie(EntityType.ZOMBIE, level);
     }
 }

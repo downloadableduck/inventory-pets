@@ -1,8 +1,7 @@
 package com.jeff.invpets.fabric;
 
+import com.jeff.invpets.InventoryPets;
 import net.fabricmc.api.ModInitializer;
-
-import com.jeff.invpets.ExampleMod;
 
 public final class ExampleModFabric implements ModInitializer {
     @Override
@@ -12,6 +11,6 @@ public final class ExampleModFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        ExampleMod.init();
+        InventoryPets.init();
     }
 }

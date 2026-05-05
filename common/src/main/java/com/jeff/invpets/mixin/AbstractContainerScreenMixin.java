@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.level.biome.Biomes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -22,8 +23,20 @@ public class AbstractContainerScreenMixin {
     @Final
     public static Identifier INVENTORY_LOCATION;
 
-    @Inject(at = @At("HEAD"), method = "<init>(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/network/chat/Component;)V")
+    @Mutable
+    @Shadow
+    @Final
+    private static Identifier SLOT_HIGHLIGHT_FRONT_SPRITE;
+
+    @Inject(at = @At(value = "HEAD"), method = "<init>(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/network/chat/Component;)V")
     private static void init(AbstractContainerMenu menu, Inventory inventory, Component title, CallbackInfo ci) {
         INVENTORY_LOCATION = Utils.getBackground();
+        if (Utils.biome != null) {
+            if (Utils.biome.equals(Biomes.SNOWY_TAIGA)) {
+                SLOT_HIGHLIGHT_FRONT_SPRITE = Utils.withInventoryPetsNamespac("container/highlight");
+            }  else {
+                SLOT_HIGHLIGHT_FRONT_SPRITE = Identifier.withDefaultNamespace("container/slot_highlight_front");
+            }
+        }
     }
 }

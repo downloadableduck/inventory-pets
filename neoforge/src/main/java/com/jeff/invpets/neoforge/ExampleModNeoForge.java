@@ -2,14 +2,12 @@ package com.jeff.invpets.neoforge;
 
 import net.neoforged.fml.common.Mod;
 
-import com.jeff.invpets.ExampleMod;
-import net.neoforged.neoforge.client.loading.NeoForgeLoadingOverlay;
+import com.jeff.invpets.InventoryPets;
 
-@Mod(ExampleMod.MOD_ID)
+@Mod(InventoryPets.MOD_ID)
 public final class ExampleModNeoForge {
     public ExampleModNeoForge() {
-        NeoForgeLoadingOverlay
         // Run our common setup.
-        ExampleMod.init();
+        InventoryPets.init();
     }
 }

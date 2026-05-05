@@ -4,15 +4,15 @@
   "version": "${version}",
   "name": "Inventory Pets",
   "accessWidener": "inventory_pets.accesswidener",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Turn your inventory into a living, breathing world!",
   "authors": [
-    "Me!"
+    "downloadableduck"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/project/downloadableduck-inventory-pets/settings",
+    "sources": "https://github.com/downloadableduck/inventory-pets"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/inventory_pets/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -29,8 +29,7 @@
   "depends": {
     "fabricloader": ">=0.19.2",
     "minecraft": ">=26.1",
-    "java": ">=21",
-    "fabric-api": "*"
+    "java": ">=21"
   },
   "suggests": {
     "another-mod": "*"
