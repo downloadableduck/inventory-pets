@@ -61,9 +61,8 @@ public abstract class InventoryMixin extends AbstractRecipeBookScreen<@NotNull I
             isFacingLeft = !isFacingLeft;
         }
         entity.tick();
-        entity.walkAnimation.setSpeed(0.3f);
-        if (entity instanceof Wolf wolf) {
-            wolf.setInSittingPose(true);
+        if (entity.walkAnimation.speed() != 0.3f) {
+            entity.walkAnimation.setSpeed(0.3f);
         }
         int xo = this.leftPos;
         int yo = this.topPos;
