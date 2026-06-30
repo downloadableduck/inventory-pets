@@ -113,7 +113,7 @@ public abstract class InventoryMixin extends AbstractRecipeBookScreen<@NotNull I
         InventoryScreen.extractEntityInInventoryFollowsMouse(graphics, (int) (Utils.randomX + dist), yo, xo + extraX, yPos, scale, 0.0625F, angle, 111, entity);
     }
 
-    @Mixin(Minecraft.class)
+    @Mixin(Gui.class)
     public abstract static class MinecraftMixin {
 
         @Inject(at = @At("HEAD"), method = "setScreen")

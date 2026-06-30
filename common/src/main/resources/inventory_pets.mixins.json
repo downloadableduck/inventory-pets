@@ -9,6 +9,7 @@
     "InventoryMixin$MinecraftMixin"
   ],
   "mixins": [
+    "STFUAgainEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -23,7 +23,7 @@ side = "BOTH"
 [[dependencies.inventory_pets]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.10,)"
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 

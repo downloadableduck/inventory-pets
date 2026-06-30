@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.armadillo.Armadillo;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
@@ -96,68 +97,68 @@ public class Utils {
     public static LivingEntity getEntity(Level level) {
         int random = (int) (Math.random() * 15);
         if (biome.equals(Biomes.THE_END)) {
-            return new EnderMan(EntityType.ENDERMAN, level);
+            return new EnderMan(EntityTypes.ENDERMAN, level);
         } else if (biome.equals(Biomes.FOREST)) {
             switch(random) {
                 case 0 -> {
-                    return new Panda(EntityType.PANDA, level);
+                    return new Panda(EntityTypes.PANDA, level);
                 }
                 case 1 -> {
-                    return new Zombie(EntityType.ZOMBIE, level);
+                    return new Zombie(EntityTypes.ZOMBIE, level);
                 }
                 case 2 -> {
-                    return new Skeleton(EntityType.SKELETON, level);
+                    return new Skeleton(EntityTypes.SKELETON, level);
                 }
                 case 3 -> {
-                    return new Drowned(EntityType.DROWNED, level);
+                    return new Drowned(EntityTypes.DROWNED, level);
                 }
                 case 4 -> {
-                    return new Spider(EntityType.SPIDER, level);
+                    return new Spider(EntityTypes.SPIDER, level);
                 }
                 case 5 -> {
-                    return new Wolf(EntityType.WOLF, level);
+                    return new Wolf(EntityTypes.WOLF, level);
                 } case 6 -> {
-                    return new Creeper(EntityType.CREEPER, level);
+                    return new Creeper(EntityTypes.CREEPER, level);
                 } case 7 -> {
-                    return new Fox(EntityType.FOX, level);
+                    return new Fox(EntityTypes.FOX, level);
                 } case 8 -> {
-                    return new Villager(EntityType.VILLAGER, level);
+                    return new Villager(EntityTypes.VILLAGER, level);
                 } case 9 -> {
-                    return new Bee(EntityType.BEE, level);
+                    return new Bee(EntityTypes.BEE, level);
                 } case 10 -> {
-                    return new Sheep(EntityType.SHEEP, level);
+                    return new Sheep(EntityTypes.SHEEP, level);
                 } case 11 -> {
-                    return new Chicken(EntityType.CHICKEN, level);
+                    return new Chicken(EntityTypes.CHICKEN, level);
                 } case 12 -> {
-                    return new Cow(EntityType.COW, level);
+                    return new Cow(EntityTypes.COW, level);
                 } case 13 -> {
-                    return new Pig(EntityType.PIG, level);
+                    return new Pig(EntityTypes.PIG, level);
                 } case 14 -> {
-                    return new Pillager(EntityType.PILLAGER, level);
+                    return new Pillager(EntityTypes.PILLAGER, level);
                 }
             }
         } else if (biome.equals(Biomes.DESERT)) {
             switch(random) {
                 case 0, 1 -> {
-                    return new Husk(EntityType.HUSK, level);
+                    return new Husk(EntityTypes.HUSK, level);
                 } case 2, 3 -> {
-                    return new Camel(EntityType.CAMEL, level);
+                    return new Camel(EntityTypes.CAMEL, level);
                 } case 4, 5 -> {
-                    Rabbit rabbit = new Rabbit(EntityType.RABBIT, level);
+                    Rabbit rabbit = new Rabbit(EntityTypes.RABBIT, level);
                     rabbit.setVariant(Rabbit.Variant.GOLD);
                     return rabbit;
                 } case 6, 7 -> {
-                    return new Parched(EntityType.PARCHED, level);
+                    return new Parched(EntityTypes.PARCHED, level);
                 } case 8, 9 -> {
-                    Villager villager = new Villager(EntityType.VILLAGER, level);
+                    Villager villager = new Villager(EntityTypes.VILLAGER, level);
                     villager.setVillagerData(villager.getVillagerData().withType((Holder) villager.typeHolder()).withType(level.registryAccess(), VillagerType.DESERT));
                     return villager;
                 } case 10, 11 -> {
-                    return new Armadillo(EntityType.ARMADILLO, level);
+                    return new Armadillo(EntityTypes.ARMADILLO, level);
                 } case 12, 13 -> {
-                    return new CamelHusk(EntityType.CAMEL_HUSK, level);
+                    return new CamelHusk(EntityTypes.CAMEL_HUSK, level);
                 } case 14, 15 -> {
-                    Chicken chicken = new Chicken(EntityType.CHICKEN, level);
+                    Chicken chicken = new Chicken(EntityTypes.CHICKEN, level);
 
                     var access = level.registryAccess().lookupOrThrow(Registries.CHICKEN_VARIANT).getOrThrow(ChickenVariants.WARM);
                     chicken.setVariant(access);
@@ -167,85 +168,85 @@ public class Utils {
         } else if (biome.equals(Biomes.OCEAN)) {
             switch(random) {
                 case 0, 1 -> {
-                    return new Salmon(EntityType.SALMON, level);
+                    return new Salmon(EntityTypes.SALMON, level);
                 } case 2, 14 -> {
-                    return new Cod(EntityType.COD, level);
+                    return new Cod(EntityTypes.COD, level);
                 } case 3 -> {
-                    return new Guardian(EntityType.GUARDIAN, level);
+                    return new Guardian(EntityTypes.GUARDIAN, level);
                 } case 4 -> {
-                    return new ElderGuardian(EntityType.ELDER_GUARDIAN, level);
+                    return new ElderGuardian(EntityTypes.ELDER_GUARDIAN, level);
                 } case 5 -> {
-                    return new TropicalFish(EntityType.TROPICAL_FISH, level);
+                    return new TropicalFish(EntityTypes.TROPICAL_FISH, level);
                 } case 6 -> {
-                    return new Dolphin(EntityType.DOLPHIN, level);
+                    return new Dolphin(EntityTypes.DOLPHIN, level);
                 } case 7 -> {
-                    return new Nautilus(EntityType.NAUTILUS, level);
+                    return new Nautilus(EntityTypes.NAUTILUS, level);
                 } case 8 -> {
-                    return new Drowned(EntityType.DROWNED, level);
+                    return new Drowned(EntityTypes.DROWNED, level);
                 } case 9, 10 -> {
-                    return new Squid(EntityType.SQUID, level);
+                    return new Squid(EntityTypes.SQUID, level);
                 } case 11 -> {
-                    return new GlowSquid(EntityType.GLOW_SQUID, level);
+                    return new GlowSquid(EntityTypes.GLOW_SQUID, level);
                 } case 12 -> {
-                    return new Axolotl(EntityType.AXOLOTL, level);
+                    return new Axolotl(EntityTypes.AXOLOTL, level);
                 } case 13 -> {
-                    return new Pufferfish(EntityType.PUFFERFISH, level);
+                    return new Pufferfish(EntityTypes.PUFFERFISH, level);
                 }
             }
         } else if (biome.equals(Biomes.CHERRY_GROVE)) {
             switch(random) {
                 case 0, 1, 2, 3 -> {
-                    return new Bee(EntityType.BEE, level);
+                    return new Bee(EntityTypes.BEE, level);
                 } case 4, 5, 6 -> {
-                    return new Chicken(EntityType.CHICKEN, level);
+                    return new Chicken(EntityTypes.CHICKEN, level);
                 } case 7, 8, 9 -> {
-                    return new Cow(EntityType.COW, level);
+                    return new Cow(EntityTypes.COW, level);
                 } case 10, 11, 12 -> {
-                    return new Sheep(EntityType.SHEEP, level);
+                    return new Sheep(EntityTypes.SHEEP, level);
                 } case 13, 14 -> {
-                    return new Pig(EntityType.PIG, level);
+                    return new Pig(EntityTypes.PIG, level);
                 }
             }
         } else if (biome.equals(Biomes.NETHER_WASTES)) {
             switch(random) {
                 case 0, 1 -> {
-                    return new ZombifiedPiglin(EntityType.ZOMBIFIED_PIGLIN, level);
+                    return new ZombifiedPiglin(EntityTypes.ZOMBIFIED_PIGLIN, level);
                 } case 2, 3 -> {
-                    return new Piglin(EntityType.PIGLIN, level);
+                    return new Piglin(EntityTypes.PIGLIN, level);
                 } case 4, 5 -> {
-                    return new PiglinBrute(EntityType.PIGLIN_BRUTE, level);
+                    return new PiglinBrute(EntityTypes.PIGLIN_BRUTE, level);
                 } case 6, 7 -> {
-                    return new Ghast(EntityType.GHAST, level);
+                    return new Ghast(EntityTypes.GHAST, level);
                 } case 8, 9 -> {
-                    return new Strider(EntityType.STRIDER, level);
+                    return new Strider(EntityTypes.STRIDER, level);
                 } case 10, 11 -> {
-                    return new Blaze(EntityType.BLAZE, level);
+                    return new Blaze(EntityTypes.BLAZE, level);
                 } case 12 -> {
-                    return new WitherSkeleton(EntityType.WITHER_SKELETON, level);
+                    return new WitherSkeleton(EntityTypes.WITHER_SKELETON, level);
                 } case 13 -> {
-                    return new Hoglin(EntityType.HOGLIN, level);
+                    return new Hoglin(EntityTypes.HOGLIN, level);
                 } case 14 -> {
-                    return new Zoglin(EntityType.ZOGLIN, level);
+                    return new Zoglin(EntityTypes.ZOGLIN, level);
                 }
             }
         } else if (biome.equals(Biomes.SNOWY_TAIGA)) {
             switch(random) {
                 case 0, 1, 2 -> {
-                    Fox fox = new Fox(EntityType.FOX, level);
+                    Fox fox = new Fox(EntityTypes.FOX, level);
                     fox.setVariant(Fox.Variant.SNOW);
                     return fox;
                 } case 3, 4, 5 -> {
-                    Rabbit rabbit = new Rabbit(EntityType.RABBIT, level);
+                    Rabbit rabbit = new Rabbit(EntityTypes.RABBIT, level);
                     rabbit.setVariant(Rabbit.Variant.WHITE);
                 } case 6, 7, 8 -> {
-                    return new Wolf(EntityType.WOLF, level);
+                    return new Wolf(EntityTypes.WOLF, level);
                 } case 9, 10, 11 -> {
-                    return new Goat(EntityType.GOAT, level);
+                    return new Goat(EntityTypes.GOAT, level);
                 } case 12, 13, 14 -> {
-                    return new PolarBear(EntityType.POLAR_BEAR, level);
+                    return new PolarBear(EntityTypes.POLAR_BEAR, level);
                 }
             }
         }
-        return new Zombie(EntityType.ZOMBIE, level);
+        return new Zombie(EntityTypes.ZOMBIE, level);
     }
 }
